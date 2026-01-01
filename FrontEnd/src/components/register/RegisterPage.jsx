@@ -115,7 +115,6 @@
 
 //////////////////////////////////////////////
 
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./register.css";
@@ -141,37 +140,6 @@ export default function Register() {
     }
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   if (formData.password !== confirmPassword) {
-  //     alert("Passwords do not match!");
-  //     return;
-  //   }
-
-  //   const response = await fetch("/user/register", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify(formData),
-  //   });
-
-  //   if (response.ok) {
-  //     alert("המשתמש נוצר בהצלחה!"); // user created successfully in Hebrew
-  //     setFormData({
-  //       full_name: "",
-  //       email: "",
-  //       phone: "",
-  //       password: "",
-  //       role: "Viewer",
-  //     });
-  //     setConfirmPassword("");
-
-  //     navigate("/"); // move to home page after registration
-  //   } else {
-  //     alert("Registration failed.");
-  //   }
-  // };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -193,7 +161,7 @@ export default function Register() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     });
-//הבנה כבר מוכן לכן אולי מיותר
+
     if (response.ok) {
       alert("User created successfully");
       setFormData({
