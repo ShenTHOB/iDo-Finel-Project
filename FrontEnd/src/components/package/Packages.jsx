@@ -60,21 +60,30 @@ const packages = [
 ];
 
 const Packages = () => {
+  // hook של react-router למעבר בין עמודים
   const navigate = useNavigate();
 
+  // פונקציה שמופעלת בלחיצה על כפתור "הזמן"
   const handleBook = () => {
-    navigate("/booking");
+    navigate("/booking"); // מעבר לעמוד ההזמנה
   };
 
   return (
     <>
+      {/* כותרת עליונה */}
       <Header />
+
       <div className="packages-page">
         <h1>iDo</h1>
+
         <div className="packages-container">
+          {/* מעבר על כל החבילות */}
           {packages.map((pkg) => (
             <div key={pkg.id} className="package-card">
+              {/* תמונת החבילה */}
               <img src={pkg.image} alt={`Package ${pkg.id}`} />
+
+              {/* אופציות לבחירה */}
               <div className="options">
                 {pkg.options.map((opt, i) => (
                   <label key={i}>
@@ -82,11 +91,15 @@ const Packages = () => {
                   </label>
                 ))}
               </div>
+
+              {/* כפתור הזמנה */}
               <button onClick={handleBook}>הזמן</button>
             </div>
           ))}
         </div>
       </div>
+
+      {/* פוטר */}
       <Footer />
     </>
   );
