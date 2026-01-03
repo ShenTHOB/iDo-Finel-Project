@@ -70,7 +70,6 @@ const Packages = () => {
 
   return (
     <>
-      {/* כותרת עליונה */}
       <Header />
 
       <div className="packages-page">
@@ -99,7 +98,6 @@ const Packages = () => {
         </div>
       </div>
 
-      {/* פוטר */}
       <Footer />
     </>
   );
